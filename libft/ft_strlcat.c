@@ -6,13 +6,13 @@
 /*   By: ayoub <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 18:12:52 by ayoub             #+#    #+#             */
-/*   Updated: 2024/08/20 18:12:53 by ayoub            ###   ########.fr       */
+/*   Updated: 2024/08/20 22:51:37 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	unsigned int	dlen;
 	unsigned int	slen;

@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoub <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 18:13:44 by ayoub             #+#    #+#             */
-/*   Updated: 2024/08/20 23:01:48 by ayoub            ###   ########.fr       */
+/*   Created: 2024/08/20 21:37:04 by ayoub             #+#    #+#             */
+/*   Updated: 2024/08/20 22:26:22 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del) (void *))
 {
-	unsigned int	i;
-	unsigned char	*p;
+	t_list	*curr;
+	t_list	*new_node;
+	t_list	*old_node;
 
-	i = 0;
-	p = s;
-	while (i < n)
-		p[i++] = c;
-	return (s);
+	if (!lst || !f || !del)
+		return (NULL);
+	curr = lst;
+	new_node = NULL;
+	while (curr)
+	{
+		old_node = ft_lstnew(f(curr->content));
+		if (!old_node)
+		{
+			ft_lstclear(&new_node, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_node, old_node);
+		curr = curr->next;
+	}
+	return (new_node);
 }
