@@ -6,7 +6,7 @@
 /*   By: ayoub <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 18:13:00 by ayoub             #+#    #+#             */
-/*   Updated: 2024/08/22 20:06:08 by ayoub            ###   ########.fr       */
+/*   Updated: 2024/08/22 20:10:08 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	int		i;
 	int		j;
+
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	str = malloc(len1 + len2 + 1);
