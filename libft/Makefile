@@ -9,18 +9,29 @@ BONUS_OBJC= $(BONUS:.c=.o)
 all:$(NAME)
 
 $(NAME): $(OBJC)
-	ar rcs $(NAME) $(OBJC)
+	@echo -n "\033[0;32m"
+	ar rcs $(NAME) $(OBJC)	
+	@echo -n "\033[0m"
 
-bonus: $(OBJC) $(BONUS_OBJC)
+bonus: $(OBJC) $(BONUS_OBJiC)
+	@echo -n "\033[0;32m"
 	ar rcs $(NAME) $(BONUS_OBJC) $(OBJC)
+	@echo -n "\033[0m"
+
 %.o: %.c
+	@echo -n "\033[0;32m"
 	$(CC) $(CFLAGS) -c $< -o $@
+	@echo -n "\033[0m"
 
 clean:
+	@echo -n "\033[0;31m"
 	rm -f $(OBJC) $(BONUS_OBJC)
+	@echo -n "\033[0m"
 
 fclean: clean
+	@echo -n "\033[0;31m"
 	rm -f $(NAME)
+	@echo -n "\033[0m"
 
 re: fclean all
 
