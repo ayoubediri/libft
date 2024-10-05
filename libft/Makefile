@@ -13,7 +13,7 @@ $(NAME): $(OBJC)
 	ar rcs $(NAME) $(OBJC)	
 	@echo -n "\033[0m"
 
-bonus: $(OBJC) $(BONUS_OBJiC)
+bonus: $(OBJC) $(BONUS_OBJC)
 	@echo -n "\033[0;32m"
 	ar rcs $(NAME) $(BONUS_OBJC) $(OBJC)
 	@echo -n "\033[0m"
